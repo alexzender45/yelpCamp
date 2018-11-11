@@ -39,7 +39,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
     //mongoose.connect("mongodb://localhost/yelp_camp");
-    mongoose.connect("mongodb://samuel:Samuel_4@ds259253.mlab.com:59253/campsite");
+    mongoose.connect("mongodb://yelpCamp:Samuel_4@ds259253.mlab.com:59253/campsite");
     
 
 app.set("view engine", "ejs");
