@@ -10,10 +10,11 @@ const express               = require("express"),
       Campground            = require("./models/campground"),
       Comment               =    require("./models/comment"),
       flash                 =  require("connect-flash"),
+      dotenv                = require('dotenv');
       seedDB                = require("./seed"),
       port                  = process.env.PORT || 8080
 
-
+      dotenv.config();
       const commentRoutes = require("./routes/comments"),
             campgroundRoutes = require("./routes/campgrounds"),
             indexRoutes  = require("./routes/index")
@@ -37,7 +38,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-    mongoose.connect("mongodb://localhost/yelp_camp");
+    //mongoose.connect("mongodb://localhost/yelp_camp");
+    mongoose.connect("mongodb://samuel:Samuel_4@ds259253.mlab.com:59253/campsite");
+    
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended : true}));
 
