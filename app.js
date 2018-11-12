@@ -37,9 +37,8 @@ app.use(flash());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-    mongoose.connect(process.env.DATABASEURL);
-    //mongoose.connect("mongodb://yelpCamp:Samuel_4@ds259253.mlab.com:59253/campsite");
+const url = process.env.DATABASEURL ||  "mongodb://localhost/yelp_camp"
+    mongoose.connect(url);
     
 
 app.set("view engine", "ejs");
