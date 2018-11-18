@@ -28,8 +28,15 @@ router.post("/register", function(req, res){
     });
 
     // Login Route
-    router.get("/login", function(req, res){
-        res.render("login");
+    router.get("/login", function(req, res, err){
+        if(err){
+            req.flash("error", err.message);
+                return res.render("login");
+        }
+        passport.authenticate("local")(req, res, function(){
+            req.flash("success", user.username + "Hi Welcome Back" );
+                 res.redirect("/campgrounds");
+             });
     });
 
     // Handling login logic

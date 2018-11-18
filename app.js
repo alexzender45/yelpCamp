@@ -10,7 +10,7 @@ const express               = require("express"),
       Campground            = require("./models/campground"),
       Comment               =    require("./models/comment"),
       flash                 =  require("connect-flash"),
-      dotenv                = require('dotenv');
+      dotenv                = require('dotenv'),
       seedDB                = require("./seed"),
       port                  = process.env.PORT || 8080
 
