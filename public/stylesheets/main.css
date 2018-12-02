@@ -13,3 +13,9 @@
 #delete-form{
     display : inline;
 }
+#man{
+    width: auto;  /* set to anything and aspect ratio is maintained - also corrects glitch in Internet Explorer */
+    height: auto;  /* set to anything and aspect ratio is maintained */
+    max-width: 100%;
+    border: 0;  /* for older IE browsers that draw borders around images */
+}
